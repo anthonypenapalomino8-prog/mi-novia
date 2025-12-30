@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Juego 3</title>
-  <link rel="stylesheet" href="../style.css">
+<meta charset="UTF-8">
+<title>Juego de Paciencia</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+#circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  transition: background 0.3s, transform 0.3s;
+}
+</style>
 </head>
-<body class="center">
+<body class="fade-in">
 
-  <h2>💞 Encuentra el amor 💞</h2>
-  <button onclick="ganar()">💘</button>
+<h1>Paciencia</h1>
+<p>Mantén presionado 3 segundos</p>
 
-  <script src="juego3.js"></script>
+<div id="circle">Mantén</div>
+
+<script src="juego3.js"></script>
 </body>
 </html>
-
-
