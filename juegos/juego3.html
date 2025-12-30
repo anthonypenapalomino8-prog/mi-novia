@@ -1,31 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Juego de Paciencia</title>
-<link rel="stylesheet" href="../style.css">
-<style>
-#circle {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.2);
-  margin: 40px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2em;
-  transition: background 0.3s, transform 0.3s;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Completa</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
-<body class="fade-in">
+<body class="center">
+  <h2>✍️ Completa la frase</h2>
+  <p>“Te voy a _______ el tiempo que sea necesario”</p>
+  <input id="input">
+  <br>
+  <button onclick="verificar()">Enviar</button>
 
-<h1>Paciencia</h1>
-<p>Mantén presionado 3 segundos</p>
-
-<div id="circle">Mantén</div>
-
-<script src="juego3.js"></script>
+  <script src="juego3.js"></script>
 </body>
 </html>
