@@ -1,67 +1,58 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
-  color: #fff;
-  text-align: center;
   margin: 0;
-  padding: 40px;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(135deg, #1f1147, #4e6cef);
+  color: white;
+  text-align: center;
+  min-height: 100vh;
 }
 
 h1 {
-  font-size: 2.5em;
-  animation: float 3s ease-in-out infinite;
+  margin-top: 40px;
 }
 
-.subtitle {
-  opacity: 0.8;
-  margin-bottom: 40px;
+p {
+  max-width: 320px;
+  margin: 10px auto;
+  line-height: 1.6;
 }
 
-.menu a {
+.menu {
+  margin-top: 40px;
+}
+
+button, a {
   display: block;
   margin: 15px auto;
-  width: 220px;
-  padding: 15px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 12px;
+  padding: 15px 28px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 1em;
   text-decoration: none;
-  color: #fff;
-  transition: transform 0.3s, background 0.3s;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-.menu a:hover {
-  background: rgba(255,255,255,0.25);
+button:hover, a:hover {
+  background: rgba(255,255,255,0.4);
   transform: scale(1.05);
 }
 
 .fade-in {
-  animation: fade 1.5s ease;
-}
-
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-.fade-in {
-  animation: fadeIn 0.8s ease forwards;
+  animation: in 0.8s ease forwards;
 }
 
 .fade-out {
-  animation: fadeOut 0.5s ease forwards;
+  animation: out 0.5s ease forwards;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; }
 }
 
-@keyframes fadeOut {
-  from { opacity: 1; }
+@keyframes out {
   to { opacity: 0; }
 }
-
