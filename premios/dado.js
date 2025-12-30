@@ -1,12 +1,13 @@
 const premios = [
-  "💋 Un beso",
-  "🤗 Un abrazo",
-  "📸 Una fotito",
-  "🍦 Un heladito",
-  "💖 Mucho amor"
+  "Un abrazo sincero",
+  "Una sonrisa compartida",
+  "Un recuerdo bonito",
+  "Un café tranquilo",
+  "Una conversación honesta",
+  "Paz para ambos"
 ];
 
-function lanzar() {
-  const random = Math.floor(Math.random() * premios.length);
-  document.getElementById("premio").innerText = premios[random];
-}
+document.getElementById("roll").onclick = () => {
+  const r = Math.floor(Math.random() * premios.length);
+  document.getElementById("result").innerText = premios[r];
+};
