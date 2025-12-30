@@ -1,12 +1,10 @@
-let puntos = 0;
+const btn = document.getElementById("btn");
 
-function tocar() {
-  puntos++;
-  document.getElementById("contador").innerText = puntos + " / 5";
+btn.addEventListener("click", () => {
+  btn.innerText = "Gracias por jugar";
+  btn.disabled = true;
 
-  if (puntos >= 5) {
+  setTimeout(() => {
     window.location.href = "../cartas/carta1.html";
-  }
-}
-
-
+  }, 1500);
+});
