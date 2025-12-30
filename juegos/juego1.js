@@ -1,21 +1,37 @@
-const circle = document.getElementById("circle");
-const msg = document.getElementById("msg");
-let ok = false;
+const palabras = ["esperar", "amor", "tiempo", "confianza"];
+let cartas = [...palabras, ...palabras].sort(() => Math.random() - 0.5);
 
-circle.style.fontSize = "80px";
+const grid = document.getElementById("grid");
+let seleccion = [];
+let aciertos = 0;
 
-setInterval(() => {
-  ok = Math.random() > 0.6;
-  circle.style.color = ok ? "#7CFF7C" : "#FF6B6B";
-}, 800);
+cartas.forEach(p => {
+  const c = document.createElement("div");
+  c.className = "card";
+  c.textContent = "❓";
+  c.onclick = () => voltear(c, p);
+  grid.appendChild(c);
+});
 
-circle.onclick = () => {
-  if (ok) {
-    msg.innerText = "Bien hecho";
-    setTimeout(() => {
-      window.location.href = "../cartas/carta1.html";
-    }, 800);
-  } else {
-    msg.innerText = "Inténtalo otra vez";
+function voltear(card, texto) {
+  if (seleccion.length === 2 || card.classList.contains("ok")) return;
+
+  card.textContent = texto;
+  seleccion.push({ card, texto });
+
+  if (seleccion.length === 2) {
+    if (seleccion[0].texto === seleccion[1].texto) {
+      seleccion.forEach(c => c.card.classList.add("ok"));
+      aciertos++;
+      seleccion = [];
+      if (aciertos === palabras.length) {
+        setTimeout(() => location.href = "../cartas/carta1.html", 800);
+      }
+    } else {
+      setTimeout(() => {
+        seleccion.forEach(c => c.card.textContent = "❓");
+        seleccion = [];
+      }, 700);
+    }
   }
-};
+}
